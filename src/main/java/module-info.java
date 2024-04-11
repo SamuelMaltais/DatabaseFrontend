@@ -12,6 +12,7 @@ module org.example.databaseinterface2 {
     requires com.almasb.fxgl.all;
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
+    requires java.naming;
 
     opens org.example.databaseinterface2 to javafx.fxml;
     exports org.example.databaseinterface2;

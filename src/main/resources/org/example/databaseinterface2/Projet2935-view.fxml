@@ -7,9 +7,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="10"
+      fx:controller="org.example.databaseinterface2.HelloController">
 <Pane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button layoutX="16.0" layoutY="105.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 1" />
+   <children >
+      <Button layoutX="16.0" layoutY="105.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 1" onAction="#Question1" />
       <Text layoutX="300.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projet 2935" wrappingWidth="158.13661193847656">
          <font>
             <Font size="24.0" />
@@ -17,14 +21,15 @@
       </Text>
       <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse du serveur" wrappingWidth="73.98306846618652" />
       <Text layoutX="45.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" wrappingWidth="43.31638526916504" />
-      <Button layoutX="16.0" layoutY="172.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 2" />
-      <Button layoutX="16.0" layoutY="239.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 3" />
-      <Button layoutX="16.0" layoutY="308.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 4" />
+      <Button layoutX="16.0" layoutY="172.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 2" onAction="#Question2"/>
+      <Button layoutX="16.0" layoutY="239.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 3" onAction="#Question3"/>
+      <Button layoutX="16.0" layoutY="308.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 4" onAction="#Question4"/>
       <Text layoutX="233.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Texte de la question :" wrappingWidth="292.64978981018066" />
       <Text layoutX="233.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Résultat du query:" wrappingWidth="292.64978981018066" />
-      <TextField layoutX="88.0" layoutY="27.0" />
+      <TextField layoutX="88.0" layoutY="27.0"/>
       <TextField layoutX="88.0" layoutY="68.0" />
-      <TextArea layoutX="233.0" layoutY="137.0" prefHeight="45.0" prefWidth="317.0" />
-      <TextArea layoutX="233.0" layoutY="207.0" prefHeight="156.0" prefWidth="317.0" />
+      <TextArea layoutX="233.0" fx:id="questionField" layoutY="137.0" prefHeight="45.0" prefWidth="317.0" />
+      <TextArea layoutX="233.0" fx:id="responseField" layoutY="207.0" prefHeight="156.0" prefWidth="317.0" />
    </children>
 </Pane>
+</VBox>
