@@ -10,6 +10,8 @@ module org.example.databaseinterface2 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jakarta.persistence;
+    requires org.hibernate.orm.core;
 
     opens org.example.databaseinterface2 to javafx.fxml;
     exports org.example.databaseinterface2;

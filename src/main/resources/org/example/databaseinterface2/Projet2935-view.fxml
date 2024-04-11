@@ -9,7 +9,7 @@
 
 <Pane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="16.0" layoutY="105.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" text="Question 1" />
+      <Button layoutX="16.0" layoutY="105.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="180.0" onAction="#Question1" text="Question 1" />
       <Text layoutX="300.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projet 2935" wrappingWidth="158.13661193847656">
          <font>
             <Font size="24.0" />
