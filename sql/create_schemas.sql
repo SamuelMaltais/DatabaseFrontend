@@ -103,12 +103,4 @@ CREATE TABLE Jouer (
                        FOREIGN KEY (NoMatch) REFERENCES Match(NoMatch)
 );
 
-CREATE TABLE Sanctionne_par (
-                                NoMatch INT,
-                                NoArbitre INT,
-                                PRIMARY KEY (NoMatch, NoArbitre),
-                                FOREIGN KEY (NoMatch) REFERENCES Match(NoMatch),
-                                FOREIGN KEY (NoArbitre) REFERENCES Arbitre(NoArbitre)
-);
-
 commit;

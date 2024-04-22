@@ -142,7 +142,7 @@ public class HelloController {
     }
     @FXML
     protected void Question4() {
-        questionField.setText("Qui(Nom, Prenom) est l'arbitre ayant donne le plus de cartons jaunes?");
+        questionField.setText("Quels(Nom, Prenom) sont les arbitres ayant donne le plus de cartons jaunes?");
         responseField.setText("Waiting query response...");
         String res;
         try {

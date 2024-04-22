@@ -6,9 +6,9 @@ FROM (
 ) as tab
 JOIN 
 (
-	select sanctionne_par.NoArbitre, nom, prenom, NoMatch from arbitre
-	JOIN sanctionne_par
-	ON sanctionne_par.NoArbitre = arbitre.NoArbitre
+	select Gestion.NoArbitre, nom, prenom, NoMatch from arbitre
+	JOIN Gestion
+	ON Gestion.NoArbitre = arbitre.NoArbitre
 	where "type" = 'Main'
 ) as tab1
 ON tab.NoMatch = tab1.NoMatch
