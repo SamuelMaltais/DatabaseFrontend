@@ -31,18 +31,16 @@ public class HelloController {
         try {
             res = ormInterface.ExecuteQuery(
                     """
-                                    SELECT vainqueur\s
-                                    FROM Coupe\s
-                                    JOIN Equipe ON (vainqueur = pays)\s
-                                    WHERE annee = 2018;
+                                   SELECT vainqueur\s
+                                     FROM Coupe\s
+                                                       WHERE annee = 2018;
                             """);
             connectionField.setText("Connection est un succès !");
-
         }
         catch(Exception e){
             res = """
                     Ce résultat ne vient pas de la db, un bug c'est produit\n
-                    France                  
+                    "France"                  
                    """;
         }
         responseField.setText(res);
@@ -149,20 +147,20 @@ public class HelloController {
             res = ormInterface.ExecuteQuery(
                     """
                                     SELECT nom, prenom, nombre_de_cartons_jaune
-                                            FROM (
-                                            	select count(*) as nombre_de_cartons_jaune, NoMatch from joueur_sanction
-                                            	where type_carton = 'Yellow'
-                                            	GROUP BY NoMatch
-                                            ) as tab
-                                            JOIN\s
-                                            (
-                                            	select sanctionne_par.NoArbitre, nom, prenom, NoMatch from arbitre
-                                            	JOIN sanctionne_par
-                                            	ON sanctionne_par.NoArbitre = arbitre.NoArbitre
-                                            	where "type" = 'Main'
-                                            ) as tab1
-                                            ON tab.NoMatch = tab1.NoMatch
-                                            Order by nombre_de_cartons_jaune desc
+                                                                                 FROM (
+                                                                                 	select count(*) as nombre_de_cartons_jaune, NoMatch from joueur_sanction
+                                                                                 	where type_carton = 'Yellow'
+                                                                                 	GROUP BY NoMatch
+                                                                                 ) as tab
+                                                                                 JOIN\s
+                                                                                 (
+                                                                                 	select Gestion.NoArbitre, nom, prenom, NoMatch from arbitre
+                                                                                 	JOIN Gestion
+                                                                                 	ON Gestion.NoArbitre = arbitre.NoArbitre
+                                                                                 	where "type" = 'Main'
+                                                                                 ) as tab1
+                                                                                 ON tab.NoMatch = tab1.NoMatch
+                                                                                 Order by nombre_de_cartons_jaune desc
                             """);
             connectionField.setText("Connection est un succès !");
 
@@ -170,12 +168,10 @@ public class HelloController {
         catch (Exception e){
             res =
                     """
-                    MÃ¼ller , Gerard , 2 ,\s
-                    Silva , Ana , 2 ,\s
-                    van der Berg , Pieter , 2 ,\s
-                    Fernandez , Carlos , 2 ,\s
-                    Smith , John , 1 ,\s
-                    Martinez , Pedro , 1 ,\s
+                         Ce résultat ne vient pas de la db, un bug c'est produit\n
+                         "Silva"    "Ana"    2\n
+                         "Smith"    "John"    1\n
+                         "MÃ¼ller"    "Gerard"    1\n
                     """;
             connectionField.setText("Echec de la connection: Changez la configuration du fichier hibernate.cfg.xml. \n Assurez vous d'avoir run les schemas et d'avoir run les fichiers sql pour les schemas.");
 
